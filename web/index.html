@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html> 
+    <head>
+        <title>EYI</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js\jquery.min.js"></script>
+        <script type="text/javascript" src="js\bootstrap.min.js"></script>
+        <script type="text/javascript" src="js\MyScript.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <style type="text/css">
+            .footer {
+                height: 50px; 
+                display: block;
+                text-align: center;
+                background-color:#00008b;
+                color:#fff;
+                margin-top: 27%;
+            }
+             .logo {
+                height:100px;
+                width: 100%;  
+                max-width:100px; 
+                display: block;
+            }
+            .h{
+                height: 150px;
+            }
+        </style>
+        <!--getmdl-select-->   
+        <link rel="stylesheet" href="css/getmdl-select.scss">
+        <script src="js/getmdl-select.js" type="text/javascript"></script>        
+    </head>
+    <body>
+        <div class="mdl-layout__container" >
+            <!-- Material Design-->
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header">
+                    <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                         <a href="index.html"> <img src="img/logo.png" class="mdl-layout-title logo" > </a>
+                        <!-- Add spacer, to align navigation to the right -->
+                        <div class="mdl-layout-spacer"></div>
+                        <!-- Navigation. We hide it in small screens. -->
+                        <nav class="mdl-navigation mdl-layout--large-screen-only">
+                            <a class="mdl-navigation__link" href="">Health Insurance</a>
+                            <a class="mdl-navigation__link" href="">Life Insurance</a>
+                            <a class="mdl-navigation__link" href="">Financial Amount</a>
+                            <a class="mdl-navigation__link" href="">Privilege</a>
+                            <a class="mdl-navigation__link" href="">Pension Plan</a>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                                 mdl-textfield--floating-label mdl-textfield--align-right">
+                                <label class="mdl-button mdl-js-button mdl-button--icon"
+                                       for="fixed-header-drawer-exp">
+                                    <i class="material-icons">search</i>
+                                </label>
+                                <div class="mdl-textfield__expandable-holder">
+                                    <input class="mdl-textfield__input" type="text" name="sample"
+                                           id="fixed-header-drawer-exp">
+                                </div>
+                        </nav>
+                    </div>
+
+                </header>
+                <main class="mdl-layout__content">
+                    <div class="page-content mdl-grid"><!-- Your content goes here -->
+                        <!------- Grid -------->
+
+                        <div class="mdl-cell mdl-cell--2-col"></div>
+                        
+                        <div class="mdl-card mdl-shadow--6dp mdl-cell--4-col">
+                            <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                                <h2 class="mdl-card__title-text">กรุณากรอกข้อมูลเพื่อค้นหาแบบประกัน</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <form action="Analysis" method="get">
+                                    <div>
+                                        <table>
+                                            <tr>เพศ</tr>
+                                            <tr>
+                                                <td> 
+                                                    <label class = "mdl-radio mdl-js-radio mdl-js-ripple-effect" for = "option1">
+                                                        <input type = "radio" id = "option1" name = "gender" value="male" class = "mdl-radio__button">
+                                                        <span class = "mdl-radio__label">ชาย</span>
+                                                    </label>
+                                                </td>
+
+                                                <td>
+                                                    <label class = "mdl-radio mdl-js-radio mdl-js-ripple-effect" for = "option2">
+                                                        <input type = "radio" id = "option2" name = "gender" value="female" class = "mdl-radio__button" >
+                                                        <span class = "mdl-radio__label">หญิง</span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div>
+                                            <label>วัน/เดือน/ปีเกิด:</label>
+                                            <input type="date" name="dateOfBrith" >
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select ">
+                                            <input class="mdl-textfield__input" id="firstObjective" name="firstObjective" type="text" readonly tabIndex="-1" />
+                                            <label class="mdl-textfield__label" for="firstObjective">จุดประสงค์หลัก</label>
+                                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="firstObjective">
+                                                <li class="mdl-menu__item" data-val="death">death</li>
+                                                <li class="mdl-menu__item" data-val="saving">saving</li>
+<!--                                                <li class="mdl-menu__item" data-val="retirement">retirement</li>
+                                                <li class="mdl-menu__item" data-val="scholarship">scholarship</li>
+                                                <li class="mdl-menu__item" data-val="health">health</li>
+                                                <li class="mdl-menu__item" data-val="taxes">taxes</li>-->
+                                            </ul>
+                                        </div>
+                                        <br/>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+                                            <input class="mdl-textfield__input" id="secondObjective" name="secondObjective" type="text" readonly tabIndex="-1" />
+                                            <label class="mdl-textfield__label" for="secondObjective">จุดประสงค์รอง</label>
+                                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="secondObjective">
+<!--                                                <li class="mdl-menu__item" data-val="BLR">death</li>
+                                                <li class="mdl-menu__item" data-val="RUS">saving</li>
+                                                <li class="mdl-menu__item" data-val="RUS">retirement</li>
+                                                <li class="mdl-menu__item" data-val="RUS">scholarship</li>-->
+                                                <li class="mdl-menu__item" data-val="RUS">health</li>
+                                                <li class="mdl-menu__item" data-val="RUS">taxes</li>
+                                            </ul>
+                                        </div>
+                                        <br/>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number" min="0" id="price" name="chip">
+                                            <label class="mdl-textfield__label" for="chip">เบี้ยประกัน</label>
+                                            <span class="mdl-textfield__error">กรุณาใตัวเลข</span>
+                                        </div>
+                                    </div>      
+                                    <div>
+                                        <label>สวัดิการเพิ่มเติม:</label><br>
+                                        <label class = "mdl-radio mdl-js-radio mdl-js-ripple-effect" for = "need1" onclick="document.getElementById('needs').style.display = 'block'">
+                                            <input type = "radio" id = "need1" name = "need" class = "mdl-radio__button">
+                                            <span class = "mdl-radio__label">ต้องการ</span>
+                                        </label>
+                                        <label class = "mdl-radio mdl-js-radio mdl-js-ripple-effect" for = "need2" onclick="document.getElementById('needs').style.display = 'none'">
+                                            <input type = "radio" id = "need2" name = "need" class = "mdl-radio__button">
+                                            <span class = "mdl-radio__label">ไม่ต้องการ</span>
+                                        </label>
+                                    </div>
+                                    <div id="needs" style="display: none;">
+                                        <div>
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                <input type="checkbox" id="female" class="mdl-checkbox__input">
+                                                <span class="mdl-checkbox__label">คุ้มครองอุบัติเหตุ</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                <input type="checkbox" id="female" class="mdl-checkbox__input">
+                                                <span class="mdl-checkbox__label">ค่าห้องพัก (กรณีเข้าพักรักษาในโรงพยาบาล)</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                <input type="checkbox" id="female" class="mdl-checkbox__input">
+                                                <span class="mdl-checkbox__label">ชดเชยรายได้ (กรณีเข้าพักรักษาในโรงพยาบาล)</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                <input type="checkbox" id="female" class="mdl-checkbox__input">
+                                                <span class="mdl-checkbox__label">คุ้มครองพิเศษโรคร้ายแรง</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                <input type="checkbox" id="female" class="mdl-checkbox__input">
+                                                <span class="mdl-checkbox__label">คุ้มครองกรณีรักษาผู้ป่วยนอก</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                <input type="checkbox" id="female" class="mdl-checkbox__input">
+                                                <span class="mdl-checkbox__label">คุ้มครองพิเศษโรคเฉพาะสตรี</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">ค้นหาแบบประกัน</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col"></div>
+                        <div class="mdl-cell mld-cell--4-col">
+                            <div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/k0KzquDdSM8?" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+
+                    <footer class="footer">
+                        <div  ><br/>
+                            Ensure Your insurance     &copy;2017
+                        </div>
+                    </footer>
+                </main>
+            </div>
+
+        </div>
+
+    </div>    
+</div>		 
+</body>
+</html>
